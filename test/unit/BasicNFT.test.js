@@ -10,7 +10,7 @@ describe('Basic NFT', () => {
     await deployments.fixture(['basicnft'])
     basicNFT = await ethers.getContract('BasicNFT')
   })
-  it('allows users to miny an NFT and update', async () => {
+  it('allows users to mint an NFT and update', async () => {
     const txResponse = await basicNFT.mintNFT()
     await txResponse.wait(1)
     const tokenURI = await basicNFT.tokenURI(0)
