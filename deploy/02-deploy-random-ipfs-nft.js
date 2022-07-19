@@ -42,7 +42,7 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
     subscriptionId = txReceipt.events[0].args.subId
     await vrfCoordinatorV2Mock.fundSubscription(subscriptionId,FUND_AMOUNT)
   } else {
-    vrfCoordinatorV2Address = networkConfig[chainId].vrfCoordinatorV2Address
+    vrfCoordinatorV2Address = networkConfig[chainId].vrfCoordinatorV2
     subscriptionId = networkConfig[chainId].subscriptionId
   }
   const { gasLane, callbackGasLimit, mintFee } = networkConfig[chainId]
